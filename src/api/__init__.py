@@ -1,4 +1,3 @@
-from .hello import hello, MyView
+from .news import news_blueprints, News
 
-
-hello.add_url_rule("/hello", view_func=MyView.as_view("my_view"))
+news_blueprints.add_url_rule("/news", view_func=News.as_view("news"))
