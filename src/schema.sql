@@ -1,5 +1,3 @@
-SELECT * FROM bbc_news.bbc_news
--- drop table bbc_news.bbc_news
 CREATE TABLE IF NOT EXISTS bbc_news.bbc_news
 (
     news_id uuid NOT NULL,
@@ -10,7 +8,19 @@ CREATE TABLE IF NOT EXISTS bbc_news.bbc_news
     toeic_500 text,
     toeic_700 text,
 	news_url character varying(255),
-    date date,
+    date date,	
     CONSTRAINT bbc_news_pkey PRIMARY KEY (news_id)
-)
-SELECT pg_column_size(type) FROM bbc_news.bbc_news;
+);
+
+CREATE TABLE IF NOT EXISTS bbc_news.users
+(
+  	user_id uuid NOT NULL PRIMARY KEY,
+  	name character varying(50) NOT NULL,
+  	username character varying(50) UNIQUE NOT NULL,
+  	password_hash BYTEA NOT NULL,
+  	email VARCHAR(255) UNIQUE NOT NULL,
+  	time timestamp without time zone DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM bbc_news.bbc_news
+SELECT * FROM bbc_news.users
