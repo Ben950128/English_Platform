@@ -2,16 +2,25 @@ import bcrypt
 import uuid
 import sqlalchemy
 import re
-import jwt
-import os
 from flask import Blueprint, request, make_response
 from flask.views import MethodView
-from datetime import datetime, timedelta
-from common import db, Users
+from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, get_jwt
+from common import blocklist, db, Users
 
 user_blueprints = Blueprint("user_blueprints", __name__)
 
 class User(MethodView):
+    @jwt_required()
+    def get(self):
+        current_user = get_jwt_identity()
+        response = {
+            "user_id": current_user["user_id"],
+            "name": current_user["name"],
+            "username": current_user["username"],
+            "email": current_user["email"]
+        }
+        return make_response(response, 200)
+    
     def post(self):
         try:
             user_detail = request.get_json()
@@ -39,10 +48,10 @@ class User(MethodView):
 
         except AssertionError as e:
             err_str = str(e)
-            response = make_response({"status": "fail", "msg": err_str}, 400)
+            response = make_response({"status": "fail", "message": err_str}, 400)
 
         except sqlalchemy.exc.IntegrityError:
-            response = make_response({"status": "fail", "msg": "帳號或email已重複，請重新輸入"}, 400)
+            response = make_response({"status": "fail", "message": "帳號或email已重複，請重新輸入"}, 400)
 
         finally:
             return response
@@ -64,14 +73,13 @@ class User(MethodView):
             salt = row[3][:29]
             hash_pwd = bcrypt.hashpw(password.encode("utf-8"), salt)
             assert hash_pwd == row[3], "密碼輸入錯誤!請重新輸入!"
-            payload = {
-                "id": str(row[0]),
+            identity = {
+                "user_id": str(row[0]),
                 "name": row[1],
                 "username": row[2],
-                "email": row[4],
-                "exp": datetime.now() + timedelta(hours=3)
+                "email": row[4]
             }
-            access_token = jwt.encode(payload, os.getenv("SECRET"), algorithm="HS256")
+            access_token = create_access_token(identity=identity)
             response = make_response(
                 {
                     "status": "success",
@@ -82,7 +90,14 @@ class User(MethodView):
 
         except AssertionError as e:
             err_str = str(e)
-            response = make_response({"status": "fail", "msg": err_str}, 400)
+            response = make_response({"status": "fail", "message": err_str}, 400)
 
         finally:
             return response
+
+    @jwt_required()
+    def delete(self):
+        jti = get_jwt()["jti"]
+        blocklist.add(jti)
+        response = make_response({"status": "success", "message": "登出成功"}, 200)
+        return response

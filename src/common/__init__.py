@@ -1,2 +1,3 @@
 from .db import db, BBCNews, Users
-from .extensions import cache
+from .jwt import jwt, blocklist
+from .cache import cache
