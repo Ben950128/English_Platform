@@ -98,6 +98,7 @@ class User(MethodView):
     @jwt_required()
     def delete(self):
         jti = get_jwt()["jti"]
-        blocklist.add(jti)
+        exp = get_jwt()["exp"]
+        blocklist[jti] = exp
         response = make_response({"status": "success", "message": "登出成功"}, 200)
         return response
