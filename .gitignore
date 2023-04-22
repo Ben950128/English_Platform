@@ -1,2 +1,4 @@
 __pycache__
-/src/.env
+/Flask/.env
+
+/FrontEnd/node_modules

@@ -13,13 +13,15 @@ class User(MethodView):
     @jwt_required()
     def get(self):
         current_user = get_jwt_identity()
-        response = {
+        user_info = {
             "user_id": current_user["user_id"],
             "name": current_user["name"],
             "username": current_user["username"],
             "email": current_user["email"]
         }
-        return make_response(response, 200)
+        response = make_response(user_info, 200)
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        return response
     
     def post(self):
         try:
@@ -54,6 +56,7 @@ class User(MethodView):
             response = make_response({"status": "fail", "message": "帳號或email已重複，請重新輸入"}, 400)
 
         finally:
+            response.headers.add("Access-Control-Allow-Origin", "*")
             return response
     
     def patch(self):
@@ -93,6 +96,7 @@ class User(MethodView):
             response = make_response({"status": "fail", "message": err_str}, 400)
 
         finally:
+            response.headers.add("Access-Control-Allow-Origin", "*")
             return response
 
     @jwt_required()
@@ -101,4 +105,5 @@ class User(MethodView):
         exp = get_jwt()["exp"]
         blocklist[jti] = exp
         response = make_response({"status": "success", "message": "登出成功"}, 200)
+        response.headers.add("Access-Control-Allow-Origin", "*")
         return response

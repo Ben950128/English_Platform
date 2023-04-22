@@ -14,7 +14,8 @@ class BBCNews(db.Model):
     toeic_500 = db.Column(db.Text)
     toeic_700 = db.Column(db.Text)
     news_url = db.Column(db.String(255))
-    date = db.Column(db.Date)
+    image_path = db.Column(db.String(255))
+    news_time = db.Column(db.TIMESTAMP(timezone=False))
 
 
 class Users(db.Model):

@@ -20,7 +20,7 @@ def reset_blocklist():
             del blocklist[key]
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=reset_blocklist, trigger="interval", minutes=1)
+scheduler.add_job(func=reset_blocklist, trigger="interval", minutes=15)
 scheduler.start()
 atexit.register(lambda: scheduler.shutdown())
 

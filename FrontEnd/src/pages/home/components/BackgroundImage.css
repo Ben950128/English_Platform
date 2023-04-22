@@ -1,0 +1,9 @@
+.image_background {
+  background-image: url(../images/home.jpg);
+  max-width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(20%);
+  margin-top: 10px;
+}
