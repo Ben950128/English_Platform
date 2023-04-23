@@ -2,33 +2,23 @@
 
 .title_wrapper {
   display: flex;
-  width: 1200px;
+  width: 90%;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px auto;
+  padding-top: 5px;
 }
 
 .categories_block {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
 
 .login_block {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.news_title_font {
-  font-size: 36px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: 700;
-  color: #4e7cbcf0;
-  margin-left: 10px;
-  margin-right: 10px;
-  cursor: pointer;
+  margin-left: 40px;
 }
 
 .label_font {

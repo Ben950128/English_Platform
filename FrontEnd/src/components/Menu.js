@@ -1,7 +1,7 @@
-import "./Title.css";
+import "./Menu.css";
 
-const Title = () => {
-  const titleList = [
+const Menu = () => {
+  const categoryArray = [
     "World",
     "Business",
     "Technology",
@@ -12,11 +12,10 @@ const Title = () => {
 
   return (
     <div className="title_wrapper">
-      <div className="news_title_font">News</div>
       <div className="categories_block">
-        {titleList.map((title) => (
-          <div key={title} className="label_font">
-            {title}
+        {categoryArray.map((category) => (
+          <div key={category} className="label_font">
+            {category}
           </div>
         ))}
       </div>
@@ -27,4 +26,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Menu;

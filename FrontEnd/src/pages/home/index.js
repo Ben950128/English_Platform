@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { API_NEWS_TYPE } from "../../global/constant";
-import Title from "../../components/Title";
-import Image from "./components/BackgroundImage";
 import NewsOutline from "./components/NewsOutline";
+import Background from "../../components/Background";
+import Footer from "../../components/Footer";
 
 async function fetchNews(news_type, setNewsData) {
   let res = await fetch(API_NEWS_TYPE + news_type);
@@ -20,9 +20,9 @@ const Home = () => {
 
   return (
     <>
-      <Title />
-      <Image />
+      <Background></Background>
       <NewsOutline newsData={newsData} />
+      <Footer />
     </>
   );
 };
