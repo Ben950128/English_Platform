@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+
+.news_outline_wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  width: 70%;
+  margin: 40px auto 0px auto;
+}
+
+.news_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  border: 1px rgba(127, 127, 140, 0.351) solid;
+  cursor: pointer;
+}
+
+.img_box {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 55%;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.news_image {
+  width: 100%;
+  transform: scale(1, 1);
+  transition: all 0.3s ease-out;
+}
+
+#news_title {
+  width: 100%;
+  font-family: "Noto Sans TC", sans-serif;
+  padding: 5px 5px;
+}
+
+.news_type_and_news_date {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+}
+
+#news_type {
+  padding: 5px 5px;
+}
+#news_date {
+  flex: 1;
+  text-align: end;
+  padding: 5px 5px;
+}

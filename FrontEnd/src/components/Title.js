@@ -1,7 +1,7 @@
 import "./Title.css";
 
 const Title = () => {
-  const TitleList = [
+  const titleList = [
     "World",
     "Business",
     "Technology",
@@ -14,7 +14,7 @@ const Title = () => {
     <div className="title_wrapper">
       <div className="news_title_font">News</div>
       <div className="categories_block">
-        {TitleList.map((title) => (
+        {titleList.map((title) => (
           <div key={title} className="label_font">
             {title}
           </div>
