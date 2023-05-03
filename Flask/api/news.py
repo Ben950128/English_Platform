@@ -1,12 +1,13 @@
-from flask import Blueprint, make_response
+from flask import Blueprint, make_response, request
 from flask.views import MethodView
 from common import cache, BBCNews
 
 news_blueprints = Blueprint("news_blueprints", __name__)
 
 class NewsType(MethodView):
-    @cache.cached(timeout=60)
+    # @cache.cached(timeout=60)
     def get(self, news_type):
+        offset_no = request.args.get("offset_no", default=0)
         if news_type == "all":
             rows = BBCNews.query.with_entities(
                 BBCNews.news_id,
@@ -16,7 +17,7 @@ class NewsType(MethodView):
                 BBCNews.news_url,
                 BBCNews.image_path,
                 BBCNews.news_time
-            ).limit(10).all()
+            ).offset(offset_no).limit(12).all()
         else:
             rows = BBCNews.query.filter(BBCNews.type==news_type).with_entities(
                 BBCNews.news_id,
@@ -26,7 +27,7 @@ class NewsType(MethodView):
                 BBCNews.news_url,
                 BBCNews.image_path,
                 BBCNews.news_time
-            ).limit(10).all()
+            ).offset(offset_no).limit(12).all()
 
         results = []
         for row in rows:

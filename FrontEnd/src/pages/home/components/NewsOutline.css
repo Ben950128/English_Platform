@@ -63,3 +63,8 @@
   text-align: end;
   padding: 5px 5px;
 }
+
+#news_link {
+  text-decoration: none;
+  color: inherit;
+}

@@ -8,17 +8,21 @@
   padding-top: 5px;
 }
 
+.empty_div {
+  width: 10%;
+}
 .categories_block {
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .login_block {
+  width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 40px;
 }
 
 .label_font {

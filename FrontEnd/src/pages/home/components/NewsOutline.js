@@ -1,4 +1,5 @@
 import "./NewsOutline.css";
+import { Link } from "react-router-dom";
 
 const NewsOutline = ({ newsData }) => {
   function formatNewsDate(date) {
@@ -31,17 +32,20 @@ const NewsOutline = ({ newsData }) => {
     <div className="news_outline_wrap">
       {newsData.map((item) => {
         const { news_id, title, type, date, image_path } = item;
+        const newsUrl = `/news?news_id=${news_id}`;
         return (
-          <div key={news_id} className="news_wrap">
-            <div className="img_box">
-              <img className="news_image" src={image_path} alt=""></img>
+          <Link to={newsUrl} id="news_link">
+            <div key={news_id} className="news_wrap">
+              <div className="img_box">
+                <img className="news_image" src={image_path} alt="" />
+              </div>
+              <div id="news_title">{title}</div>
+              <div className="news_type_and_news_date">
+                <div id="news_type">{formatNewsType(type)}</div>
+                <div id="news_date">{formatNewsDate(date)}</div>
+              </div>
             </div>
-            <div id="news_title">{title}</div>
-            <div className="news_type_and_news_date">
-              <div id="news_type">{formatNewsType(type)}</div>
-              <div id="news_date">{formatNewsDate(date)}</div>
-            </div>
-          </div>
+          </Link>
         );
       })}
     </div>

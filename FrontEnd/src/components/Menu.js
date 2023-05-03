@@ -12,6 +12,7 @@ const Menu = () => {
 
   return (
     <div className="title_wrapper">
+      <div className="empty_div"></div>
       <div className="categories_block">
         {categoryArray.map((category) => (
           <div key={category} className="label_font">
