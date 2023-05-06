@@ -34,8 +34,8 @@ const NewsOutline = ({ newsData }) => {
         const { news_id, title, type, date, image_path } = item;
         const newsUrl = `/news?news_id=${news_id}`;
         return (
-          <Link to={newsUrl} id="news_link">
-            <div key={news_id} className="news_wrap">
+          <Link key={news_id} to={newsUrl} id="news_link">
+            <div className="news_wrap">
               <div className="img_box">
                 <img className="news_image" src={image_path} alt="" />
               </div>

@@ -1,21 +1,28 @@
+import { useContext } from "react";
+import NewsTypeContext from "./NewsTypeContext";
 import "./Menu.css";
 
 const Menu = () => {
-  const categoryArray = [
-    "World",
-    "Business",
-    "Technology",
-    "Science & Environment",
-    "Entertainment & Arts",
-    "Health",
-  ];
+  const categoryObject = {
+    World: "world",
+    Business: "business",
+    Technology: "technology",
+    "Science & Environment": "science_and_environment",
+    "Entertainment & Arts": "entertainment_and_arts",
+    Health: "health",
+  };
+  const { setNewsType } = useContext(NewsTypeContext);
 
   return (
     <div className="title_wrapper">
-      <div className="empty_div"></div>
+      <div className="empty_div" />
       <div className="categories_block">
-        {categoryArray.map((category) => (
-          <div key={category} className="label_font">
+        {Object.keys(categoryObject).map((category) => (
+          <div
+            key={category}
+            className="label_font"
+            onClick={() => setNewsType(categoryObject[category])}
+          >
             {category}
           </div>
         ))}

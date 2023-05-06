@@ -17,7 +17,7 @@ class NewsType(MethodView):
                 BBCNews.news_url,
                 BBCNews.image_path,
                 BBCNews.news_time
-            ).offset(offset_no).limit(12).all()
+            ).order_by(BBCNews.news_time.desc()).offset(offset_no).limit(12).all()
         else:
             rows = BBCNews.query.filter(BBCNews.type==news_type).with_entities(
                 BBCNews.news_id,
@@ -27,7 +27,7 @@ class NewsType(MethodView):
                 BBCNews.news_url,
                 BBCNews.image_path,
                 BBCNews.news_time
-            ).offset(offset_no).limit(12).all()
+            ).order_by(BBCNews.news_time.desc()).offset(offset_no).limit(12).all()
 
         results = []
         for row in rows:

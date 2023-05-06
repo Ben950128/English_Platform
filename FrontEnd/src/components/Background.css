@@ -6,11 +6,15 @@
   background-color: #eecc44;
 }
 
+#homepage_title_block {
+  margin: 40px 0px 0px 15%;
+}
+
 #homepage_title {
   font-family: "Rowdies", cursive;
   font-weight: 700;
   font-size: 70px;
-  margin: 40px 0px 0px 15%;
+  cursor: pointer;
 }
 
 .background_block_bottom {
