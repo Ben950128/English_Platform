@@ -1,0 +1,12 @@
+.news_article_wrap {
+  position: relative;
+  top: -345px;
+  width: 85%;
+  margin: 40px auto 0px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: -300px;
+  /* border: red solid 2px; */
+}

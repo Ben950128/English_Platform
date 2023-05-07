@@ -1,8 +1,16 @@
 import { useContext } from "react";
 import NewsTypeContext from "./NewsTypeContext";
-import "./Menu.css";
+import "../css/Menu.css";
 
 const Menu = () => {
+  const { setNewsType } = useContext(NewsTypeContext);
+  function redirectTypeUrl(category) {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
+    } else {
+      setNewsType(categoryObject[category]);
+    }
+  }
   const categoryObject = {
     World: "world",
     Business: "business",
@@ -11,7 +19,6 @@ const Menu = () => {
     "Entertainment & Arts": "entertainment_and_arts",
     Health: "health",
   };
-  const { setNewsType } = useContext(NewsTypeContext);
 
   return (
     <div className="title_wrapper">
@@ -21,14 +28,14 @@ const Menu = () => {
           <div
             key={category}
             className="label_font"
-            onClick={() => setNewsType(categoryObject[category])}
+            onClick={() => redirectTypeUrl(category)}
           >
             {category}
           </div>
         ))}
       </div>
       <div className="login_block">
-        <div className="label_font">登入/註冊</div>
+        <div className="label_font">log in/sign up</div>
       </div>
     </div>
   );

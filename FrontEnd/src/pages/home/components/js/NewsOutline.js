@@ -1,4 +1,4 @@
-import "./NewsOutline.css";
+import "../css/NewsOutline.css";
 import { Link } from "react-router-dom";
 
 const NewsOutline = ({ newsData }) => {

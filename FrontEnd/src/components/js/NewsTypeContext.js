@@ -1,4 +1,4 @@
 import { createContext } from "react";
 
-const NewsTypeContext = createContext("444444");
+const NewsTypeContext = createContext(null);
 export default NewsTypeContext;

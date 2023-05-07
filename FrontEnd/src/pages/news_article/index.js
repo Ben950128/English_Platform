@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { API_NEWS_DETAIL } from "../../global/constant";
-import Footer from "../../components/Footer";
+import Background from "../../components/js/Background";
+import Footer from "../../components/js/Footer";
+import NewsArticleWrap from "./components/js/NewsArticleWrap";
 
 async function fetchOneNews(news_id, setOneNewsData) {
   let res = await fetch(API_NEWS_DETAIL + news_id);
@@ -9,20 +11,21 @@ async function fetchOneNews(news_id, setOneNewsData) {
   setOneNewsData(data);
 }
 
-const News = () => {
+const NewsArticle = () => {
   const [oneNewsData, setOneNewsData] = useState([]);
   const url = useLocation();
   useEffect(() => {
     const news_id = url.search.split("=")[1];
     fetchOneNews(news_id, setOneNewsData);
   }, [url]);
-  console.log(oneNewsData);
 
   return (
     <>
+      <Background />
+      <NewsArticleWrap oneNewsData={oneNewsData} />
       <Footer />
     </>
   );
 };
 
-export default News;
+export default NewsArticle;
