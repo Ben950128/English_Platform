@@ -4,8 +4,10 @@ RUN apt-get update
 
 RUN apt-get install -y libpq-dev gcc
 
-COPY ./requirements.txt /
+COPY . /app
 
-RUN pip install -r /requirements.txt
+WORKDIR /app
+
+RUN pip install -r /app/requirements.txt
 
 ENV TZ="Asia/Taipei"
