@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  server:
+    container_name: server-api
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: uwsgi --ini uwsgi.ini

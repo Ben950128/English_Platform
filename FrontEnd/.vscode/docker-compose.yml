@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  python:
+  server:
     container_name: Elglish_Platform_FrontEnd
     build: .
     ports:

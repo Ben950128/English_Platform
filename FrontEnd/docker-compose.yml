@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  server:
+    container_name: front-end
+    image: 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_frontend:1.0
+    ports:
+      - "5000:5000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: serve -s build -l 5000

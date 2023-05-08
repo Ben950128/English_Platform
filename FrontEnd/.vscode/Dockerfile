@@ -1,4 +1,4 @@
-FROM node:19.9-slim
+FROM node:20.1-slim
 
 RUN apt-get update 
 

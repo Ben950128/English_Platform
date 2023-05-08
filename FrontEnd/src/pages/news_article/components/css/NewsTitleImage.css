@@ -1,0 +1,16 @@
+.title_image_wrap {
+  position: relative;
+  top: -345px;
+  width: 78%;
+  height: 305px;
+  margin: 40px auto 0px auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: blue 2px solid;
+}
+
+.news_img {
+  width: 100%;
+  border: orange solid 2px;
+}
