@@ -2,3 +2,4 @@ __pycache__
 /Flask/.env
 
 /FrontEnd/node_modules
+/FrontEnd/build

@@ -1,15 +1,16 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import NewsTypeContext from "./NewsTypeContext";
 import "../css/Menu.css";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const { setNewsType } = useContext(NewsTypeContext);
   function redirectTypeUrl(category) {
     if (window.location.pathname !== "/") {
-      window.location.href = "/";
-    } else {
-      setNewsType(categoryObject[category]);
+      navigate("/");
     }
+    setNewsType(categoryObject[category]);
   }
   const categoryObject = {
     World: "world",

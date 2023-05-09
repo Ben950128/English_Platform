@@ -1,13 +1,15 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 import NewsTypeContext from "./NewsTypeContext";
 import "../css/Background.css";
 
 const Background = () => {
   const { setNewsType } = useContext(NewsTypeContext);
+  const navigate = useNavigate();
   function redirectToIndexUrl() {
     if (window.location.pathname !== "/") {
-      window.location.href = "/";
+      navigate("/");
     } else {
       setNewsType("all");
     }

@@ -2,7 +2,7 @@ version: "3.8"
 services:
   server:
     container_name: server-api
-    image: 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_api:1.0
+    image: 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_api:latest
     ports:
       - "3000:3000"
     command: uwsgi --ini uwsgi.ini

@@ -20,4 +20,5 @@ SQLAlchemy==2.0.7
 typing_extensions==4.5.0
 tzdata==2023.3
 tzlocal==4.3
+uWSGI==2.0.21
 Werkzeug==2.2.3
