@@ -5,14 +5,14 @@
   display: flex;
   top: -345px;
   width: 78%;
-  height: 305px;
+  height: 205px;
   margin: 40px auto 0px auto;
   overflow: hidden;
 }
 
 .main_news_img_box {
-  width: 25%;
-  max-height: 50%;
+  width: 300px;
+  max-height: 225px;
   overflow: hidden;
   z-index: 1;
 }
@@ -37,6 +37,6 @@
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 700;
   color: rgb(63, 63, 71);
-  font-size: 36px;
-  margin: auto 30px;
+  font-size: 32px;
+  margin: auto 12px auto 220px;
 }

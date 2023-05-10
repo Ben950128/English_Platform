@@ -1,8 +1,8 @@
 import "../css/NewsOrigin.css";
 
-function NewsOrigin({ oneNewsArticle }) {
+function NewsOrigin({ oneNewsData }) {
   // 如果 oneNewsArticle為null或undefined，直接返回空陣列
-  const paragraphs = oneNewsArticle?.split("\n") || [];
+  const paragraphs = oneNewsData.news_origin?.split("\n") || [];
   const renderParagraphs = () =>
     paragraphs.map((paragraph, index) => (
       <div key={index}>

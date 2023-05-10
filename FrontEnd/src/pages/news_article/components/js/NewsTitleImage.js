@@ -7,7 +7,7 @@ function NewsTitleImage({ oneNewsData }) {
         <img className="main_news_image" src={oneNewsData.image_path} alt="" />
       </div>
       <div className="main_news_title_block">
-        <span className="main_news_title">{oneNewsData.title}</span>
+        <div className="main_news_title">{oneNewsData.title}</div>
       </div>
     </div>
   );
