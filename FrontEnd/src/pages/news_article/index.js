@@ -14,6 +14,7 @@ async function fetchOneNews(news_id, setOneNewsData) {
 const NewsArticle = () => {
   const [oneNewsData, setOneNewsData] = useState([]);
   const url = useLocation();
+
   useEffect(() => {
     const news_id = url.search.split("=")[1];
     fetchOneNews(news_id, setOneNewsData);

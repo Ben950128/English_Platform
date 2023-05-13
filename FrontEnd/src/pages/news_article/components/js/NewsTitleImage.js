@@ -1,6 +1,6 @@
 import "../css/NewsTitleImage.css";
 
-function NewsTitleImage({ oneNewsData }) {
+const NewsTitleImage = ({ oneNewsData }) => {
   return (
     <div className="title_image_wrap">
       <div className="main_news_img_box">
@@ -11,6 +11,6 @@ function NewsTitleImage({ oneNewsData }) {
       </div>
     </div>
   );
-}
+};
 
 export default NewsTitleImage;

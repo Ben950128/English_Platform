@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function BasicSelect({ translator, setTranslator }) {
+const BasicSelect = ({ translator, setTranslator }) => {
   const handleChange = (event) => {
     setTranslator(event.target.value);
   };
@@ -27,4 +27,6 @@ export default function BasicSelect({ translator, setTranslator }) {
       </FormControl>
     </Box>
   );
-}
+};
+
+export default BasicSelect;

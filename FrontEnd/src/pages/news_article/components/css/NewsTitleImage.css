@@ -36,7 +36,44 @@
 .main_news_title {
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 700;
-  color: rgb(63, 63, 71);
+  color: #3f3f47;
   font-size: 32px;
   margin: auto 12px auto 220px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main_news_title {
+    font-size: 26px;
+  }
+  .main_news_img_box {
+    width: 240px;
+    max-height: 180px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title_image_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    top: -345px;
+    width: 78%;
+    height: 300px;
+    margin: 40px auto 0px auto;
+  }
+  .main_news_img_box {
+    width: 100%;
+    max-height: 175px;
+    overflow: hidden;
+  }
+  .main_news_title_block {
+    position: static;
+    bottom: auto;
+    right: auto;
+    flex: 1;
+    width: 100%;
+  }
+  .main_news_title {
+    font-size: 22px;
+    margin: 20px 10px auto 10px;
+  }
 }

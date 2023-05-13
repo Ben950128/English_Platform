@@ -2,7 +2,7 @@ import { useState } from "react";
 import SelectButton from "./SelectButton";
 import "../css/NewsTranslator.css";
 
-function NewsTranslator({ oneNewsData }) {
+const NewsTranslator = ({ oneNewsData }) => {
   // 如果 oneNewsArticle為null或undefined，直接返回空陣列
   const [translator, setTranslator] = useState("news_tw");
   const paragraphs = oneNewsData[translator]?.split("\n") || [];
@@ -19,6 +19,6 @@ function NewsTranslator({ oneNewsData }) {
       {renderParagraphs()}
     </div>
   );
-}
+};
 
 export default NewsTranslator;

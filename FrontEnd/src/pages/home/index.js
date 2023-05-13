@@ -1,31 +1,58 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { API_NEWS_TYPE } from "../../global/constant";
 import NewsOutline from "./components/js/NewsOutline";
 import Background from "../../components/js/Background";
 import Footer from "../../components/js/Footer";
 import NewsTypeContext from "../../components/js/NewsTypeContext";
-
-async function fetchNews(news_type, offsetNo, setNewsData) {
-  let res = await fetch(API_NEWS_TYPE + news_type + `?offset_no=${offsetNo}`);
-  let data = await res.json();
-  setNewsData(data);
-}
+import NextOffsetContext from "../../components/js/NextOffestContext";
+import NewsDataContext from "../../components/js/NewsData.Context";
 
 const Home = () => {
-  const [newsData, setNewsData] = useState([]);
+  const [isIntersecting, setIsIntersecting] = useState(null);
   const { newsType } = useContext(NewsTypeContext);
+  const { nextOffset, setNextOffset } = useContext(NextOffsetContext);
+  const [ifNewsData, setIfNewsData] = useState(true);
+  const { newsData, setNewsData } = useContext(NewsDataContext);
+  const NextRef = useRef(null);
 
-  // 因為是空陣列，因此呼叫setNewsData更改newsData後，並不會再次執行useEffect導致變成無限迴圈
+  async function fetchNews(offsetNo) {
+    let res = await fetch(API_NEWS_TYPE + newsType + `?offset_no=${offsetNo}`);
+    let data = await res.json();
+    if (!data.length) {
+      setIfNewsData(false);
+    } else {
+      setIfNewsData(true);
+    }
+    setNewsData(newsData.concat(data));
+  }
+
   useEffect(() => {
     let offsetNo = 0;
-    fetchNews(newsType, offsetNo, setNewsData);
-  }, [newsType]);
+    fetchNews(offsetNo);
+  }, [newsType, setNewsData]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    });
+    observer.observe(NextRef.current);
+    return () => observer.disconnect();
+  }, [isIntersecting]);
+
+  useEffect(() => {
+    if (isIntersecting) {
+      setNextOffset(nextOffset + 12);
+      if (ifNewsData) {
+        fetchNews(nextOffset);
+      }
+    }
+  }, [isIntersecting]);
 
   return (
     <>
       <Background />
       <NewsOutline newsData={newsData} />
-      <Footer />
+      <Footer NextRef={NextRef} />
     </>
   );
 };

@@ -2,17 +2,23 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 import NewsTypeContext from "./NewsTypeContext";
+import NextOffsetContext from "./NextOffestContext";
+import NewsDataContext from "./NewsData.Context";
 import "../css/Background.css";
 
 const Background = () => {
   const { setNewsType } = useContext(NewsTypeContext);
+  const { setNextOffset } = useContext(NextOffsetContext);
+  const { setNewsData } = useContext(NewsDataContext);
+
   const navigate = useNavigate();
   function redirectToIndexUrl() {
     if (window.location.pathname !== "/") {
       navigate("/");
-    } else {
-      setNewsType("all");
     }
+    setNewsType("all");
+    setNewsData([]);
+    setNextOffset(0);
   }
   return (
     <>
