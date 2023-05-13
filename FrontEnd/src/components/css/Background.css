@@ -41,7 +41,10 @@
 }
 
 @media screen and (max-width: 700px) {
+  #homepage_title_block {
+    margin: 50px 0px 0px 12%;
+  }
   #homepage_title {
-    font-size: 48px;
+    font-size: 44px;
   }
 }

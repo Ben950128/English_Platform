@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
 import NewsTypeContext from "./NewsTypeContext";
 import NextOffsetContext from "../../components/js/NextOffestContext";
 import NewsDataContext from "./NewsData.Context";
-import "../css/Menu.css";
+import "../css/NewsMenu.css";
 
-const Menu = () => {
+const NewsMenu = () => {
   const navigate = useNavigate();
   const { setNewsType } = useContext(NewsTypeContext);
   const { setNextOffset } = useContext(NextOffsetContext);
@@ -42,11 +43,15 @@ const Menu = () => {
           </div>
         ))}
       </div>
+      <BurgerMenu
+        categoryObject={categoryObject}
+        redirectTypeUrl={redirectTypeUrl}
+      ></BurgerMenu>
       <div className="login_block">
-        <div className="label_font">log in/sign up</div>
+        <div className="label_font">Login/Sign up</div>
       </div>
     </div>
   );
 };
 
-export default Menu;
+export default NewsMenu;

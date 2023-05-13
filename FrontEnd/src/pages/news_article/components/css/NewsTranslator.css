@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
 
-.news_origin_article_wrap {
+.news_translator_wrap {
   background-color: white;
   padding: 5px 15px 5px 15px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -8,4 +8,10 @@
   font-weight: 400;
   color: rgb(63, 63, 71);
   font-size: 16px;
+}
+
+@media screen and (max-width: 700px) {
+  .news_translator_wrap {
+    margin-top: 30px;
+  }
 }

@@ -1,0 +1,14 @@
+#burger_wrap {
+  display: none;
+}
+
+#burger_icon {
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (max-width: 1200px) {
+  #burger_wrap {
+    display: block;
+  }
+}

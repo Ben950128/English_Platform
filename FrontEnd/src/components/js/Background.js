@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Menu from "./Menu";
+import NewsMenu from "./NewsMenu";
 import NewsTypeContext from "./NewsTypeContext";
 import NextOffsetContext from "./NextOffestContext";
 import NewsDataContext from "./NewsData.Context";
@@ -23,7 +23,7 @@ const Background = () => {
   return (
     <>
       <div className="background_block_top">
-        <Menu />
+        <NewsMenu />
         <div id="homepage_title_block">
           <span id="homepage_title" onClick={() => redirectToIndexUrl()}>
             Chew News

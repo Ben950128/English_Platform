@@ -14,7 +14,7 @@ const NewsTranslator = ({ oneNewsData }) => {
     ));
 
   return (
-    <div className="news_origin_article_wrap">
+    <div className="news_translator_wrap">
       <SelectButton translator={translator} setTranslator={setTranslator} />
       {renderParagraphs()}
     </div>

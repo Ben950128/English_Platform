@@ -9,7 +9,7 @@
 }
 
 .empty_div {
-  width: 10%;
+  width: 12%;
 }
 .categories_block {
   width: 70%;
@@ -33,4 +33,27 @@
   font-size: 16px;
   margin: 5px 10px 0px 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .title_wrapper {
+    display: flex;
+    width: 75%;
+    justify-content: flex-start;
+    margin: 0px auto;
+    padding-top: 10px;
+  }
+  .empty_div {
+    width: 0%;
+  }
+  .categories_block {
+    display: none;
+  }
+  .login_block {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 3% 5px auto;
+  }
 }

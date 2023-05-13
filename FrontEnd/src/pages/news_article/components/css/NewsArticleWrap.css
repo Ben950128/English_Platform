@@ -7,12 +7,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 5%;
   justify-content: center;
-  margin-bottom: -300px;
 }
 
 @media screen and (max-width: 700px) {
   .news_article_wrap {
-    grid-template-columns: repeat(1, 1fr);
-    margin-bottom: -200px;
+    display: flex;
+    flex-wrap: wrap;
+    top: -355px;
   }
 }

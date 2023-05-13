@@ -9,10 +9,10 @@ import NewsDataContext from "../../components/js/NewsData.Context";
 
 const Home = () => {
   const [isIntersecting, setIsIntersecting] = useState(null);
-  const { newsType } = useContext(NewsTypeContext);
-  const { nextOffset, setNextOffset } = useContext(NextOffsetContext);
   const [ifNewsData, setIfNewsData] = useState(true);
+  const { newsType } = useContext(NewsTypeContext);
   const { newsData, setNewsData } = useContext(NewsDataContext);
+  const { nextOffset, setNextOffset } = useContext(NextOffsetContext);
   const NextRef = useRef(null);
 
   async function fetchNews(offsetNo) {

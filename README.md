@@ -1,1 +1,1 @@
-# English_Platform
+# News-Translator
