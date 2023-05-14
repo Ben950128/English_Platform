@@ -4,12 +4,17 @@
 
 ### 建立新聞閱讀網站，可依照自身英文程度重構該篇新聞，並給予中文翻譯。
 
-- 首頁，全覽各新聞並可依照新聞主題進行篩選。
-  ![image](https://github.com/Ben950128/News-Translator/tree/main/images/homepage.png)
-- 可察看詳細新聞資訊及中文翻譯。
-  ![image](https://github.com/Ben950128/News-Translator/tree/main/images/news.png)
-- 透過 Translator 可依使用者英文程度重構該篇新聞。
-  ![image](https://github.com/Ben950128/News-Translator/tree/main/images/translator.png)
+#### 首頁，全覽各新聞並可依照新聞主題進行篩選。
+
+![image](../News-Translator/images/homepage.png)
+
+#### 可察看詳細新聞資訊及中文翻譯。
+
+![image](../News-Translator/images/news.png)
+
+#### 透過 Translator 可依使用者英文程度重構該篇新聞。
+
+![image](../News-Translator/images/translator.png)
 
 ## 專案架設
 
