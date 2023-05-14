@@ -18,12 +18,18 @@
   align-items: center;
 }
 
-.login_block {
+.user_block {
   width: 12%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 3%;
+}
+
+#user_icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .label_font {
@@ -38,7 +44,7 @@
 @media screen and (max-width: 1200px) {
   .title_wrapper {
     display: flex;
-    width: 75%;
+    width: 79%;
     justify-content: flex-start;
     margin: 0px auto;
     padding-top: 10px;
@@ -49,11 +55,17 @@
   .categories_block {
     display: none;
   }
-  .login_block {
-    width: 200px;
+  .user_block {
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 3% 5px auto;
+    margin: 3px 3% 5px auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title_wrapper {
+    width: 80%;
   }
 }

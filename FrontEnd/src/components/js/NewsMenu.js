@@ -46,9 +46,11 @@ const NewsMenu = () => {
       <BurgerMenu
         categoryObject={categoryObject}
         redirectTypeUrl={redirectTypeUrl}
-      ></BurgerMenu>
-      <div className="login_block">
-        <div className="label_font">Login/Sign up</div>
+      />
+      <div className="user_block">
+        <div>
+          <img id="user_icon" src="/user.png" />
+        </div>
       </div>
     </div>
   );
