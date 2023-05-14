@@ -6,15 +6,15 @@
 
 #### 首頁，全覽各新聞並可依照新聞主題進行篩選。
 
-![image](../News-Translator/images/homepage.png)
+![image](https://github.com/Ben950128/News-Translator/blob/main/images/homepage.png?raw=true)
 
 #### 可察看詳細新聞資訊及中文翻譯。
 
-![image](../News-Translator/images/news.png)
+![image](https://github.com/Ben950128/News-Translator/blob/main/images/news.png?raw=true)
 
 #### 透過 Translator 可依使用者英文程度重構該篇新聞。
 
-![image](../News-Translator/images/translator.png)
+![image](https://github.com/Ben950128/News-Translator/blob/main/images/translator.png?raw=true)
 
 ## 專案架設
 
@@ -48,7 +48,7 @@
 
 ### Portainer 管理 container
 
-![image](https://github.com/Ben950128/News-Translator/tree/main/images/portainer.png)
+![image](https://github.com/Ben950128/News-Translator/blob/main/images/portainer.png?raw=true)
 
 ### 後端 API
 
