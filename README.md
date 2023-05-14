@@ -6,15 +6,15 @@
 
 #### 首頁，全覽各新聞並可依照新聞主題進行篩選。
 
-<img src="https://github.com/Ben950128/News-Translator/blob/main/images/homepage.png?raw=true" alt="news" width="400px">
+<img src="https://github.com/Ben950128/News-Translator/blob/main/images/homepage.png?raw=true" alt="news" width="500px">
 
 #### 可察看詳細新聞資訊及中文翻譯。
 
-<img src="https://github.com/Ben950128/News-Translator/blob/main/images/news.png?raw=true" alt="news" width="400px">
+<img src="https://github.com/Ben950128/News-Translator/blob/main/images/news.png?raw=true" alt="news" width="500px">
 
 #### 透過 Translator 可依使用者英文程度重構該篇新聞。
 
-<img src="https://github.com/Ben950128/News-Translator/blob/main/images/translator.png?raw=true" alt="news" width="400px">
+<img src="https://github.com/Ben950128/News-Translator/blob/main/images/translator.png?raw=true" alt="news" width="500px">
 
 ## 專案架設
 
@@ -46,7 +46,7 @@
 
 ## 部屬方式(Docker)
 
-### Portainer 管理 container
+### Portainer 管理 Container
 
 ![image](https://github.com/Ben950128/News-Translator/blob/main/images/portainer.png?raw=true)
 
@@ -55,19 +55,19 @@
 - 本地先建立 image
 
 ```console
-docker build -t english_platform_api .
+docker build -t news_translator_api .
 ```
 
 - 為此 image 加上 tag
 
 ```console
-docker tag english_platform_api:latest 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_api:latest
+docker tag news_translator_api:latest 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/news_translator_api:latest
 ```
 
 - Push image 至 AWS ECR
 
 ```console
-docker push 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_api:latest
+docker push 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/news_translator_api:latest
 ```
 
 - 在 AWS EC2 上啟動 API service
@@ -81,22 +81,22 @@ docker compose up -d
 - 本地先建立 image
 
 ```console
-docker build -t english_platform_frontend .
+docker build -t news_translator_frontend .
 ```
 
 - 為此 image 加上 tag
 
 ```console
-docker tag english_platform_frontend:latest 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_frontend:latest
+docker tag news_translator_frontend:latest 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/news_translator_frontend:latest
 ```
 
 - Push image 至 AWS ECR
 
 ```console
-docker push 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/english_platform_frontend:latest
+docker push 693083281322.dkr.ecr.ap-northeast-1.amazonaws.com/news_translator_frontend:latest
 ```
 
-- 在 AWS EC2 上啟動 API service
+- 在 AWS EC2 上啟動 FrontEnd service
 
 ```console
 docker compose up -d

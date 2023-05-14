@@ -31,7 +31,7 @@ const NewsMenu = () => {
 
   return (
     <div className="title_wrapper">
-      <div className="empty_div" />
+      {/* <div className="empty_div" /> */}
       <div className="categories_block">
         {Object.keys(categoryObject).map((category) => (
           <div
@@ -47,11 +47,11 @@ const NewsMenu = () => {
         categoryObject={categoryObject}
         redirectTypeUrl={redirectTypeUrl}
       />
-      <div className="user_block">
+      {/* <div className="user_block">
         <div>
           <img id="user_icon" src="/user.png" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
