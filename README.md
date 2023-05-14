@@ -6,15 +6,15 @@
 
 #### 首頁，全覽各新聞並可依照新聞主題進行篩選。
 
-![image](https://github.com/Ben950128/News-Translator/blob/main/images/homepage.png?raw=true)
+<img src="https://github.com/Ben950128/News-Translator/blob/main/images/homepage.png?raw=true" alt="news" width="400px">
 
 #### 可察看詳細新聞資訊及中文翻譯。
 
-![image](https://github.com/Ben950128/News-Translator/blob/main/images/news.png?raw=true)
+<img src="https://github.com/Ben950128/News-Translator/blob/main/images/news.png?raw=true" alt="news" width="400px">
 
 #### 透過 Translator 可依使用者英文程度重構該篇新聞。
 
-![image](https://github.com/Ben950128/News-Translator/blob/main/images/translator.png?raw=true)
+<img src="https://github.com/Ben950128/News-Translator/blob/main/images/translator.png?raw=true" alt="news" width="400px">
 
 ## 專案架設
 
