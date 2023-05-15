@@ -33,6 +33,14 @@ const BurgerMenu = ({ categoryObject, redirectTypeUrl }) => {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
       >
         {Object.keys(categoryObject).map((category) => (
           <MenuItem
