@@ -33,9 +33,12 @@
 ### 後端 API
 
 - 以 Python Flask 建立後端 API，包含新聞資料串接及登入系統功能。
-- 單一筆新聞詳細資料串接 API:api/news/<news_id>
-- 依主題串接新聞資料 API:/news/type/<news_type>
-- 登入系統 API:/api/user
+- .env 設定 :  
+  SQLALCHEMY_DATABASE_URI="資料庫 URI"  
+  JWT_SECRET_KEY="自定義"
+- 單一筆新聞詳細資料串接 API : api/news/<news_id>
+- 依主題串接新聞資料 API : /news/type/<news_type>
+- 登入系統 API : /api/user
 
 ### 前端頁面
 
